@@ -1,18 +1,17 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { StudentService } from './student.service';
+/* eslint-disable prettier/prettier */
+import {Injectable} from '@nestjs/common'
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { CreateStudentDto } from 'src/dto/student.dtos';
+import { IStudent } from 'src/interface/create-student.interface';
 
-describe('StudentService', () => {
-  let service: StudentService;
+@Injectable()
+export class StudentService {
+  constructor(@InjectModel('Student') private studentModel: Model<IStudent>) {
+    
+  }
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [StudentService],
-    }).compile();
-
-    service = module.get<StudentService>(StudentService);
-  });
-
-  it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
-});
+  async createStudent(CreateStudentDto: CreateStudentDto: Promise<IStudent>) {
+    return 
+  }
+}
