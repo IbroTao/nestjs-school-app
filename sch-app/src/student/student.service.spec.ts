@@ -12,6 +12,6 @@ export class StudentService {
   }
 
   async createStudent(CreateStudentDto: CreateStudentDto: Promise<IStudent>) {
-    return 
+    return man
   }
 }
