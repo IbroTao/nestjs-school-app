@@ -23,4 +23,9 @@ export class CreateStudentDto {
     @IsNumber()
     @IsNotEmpty()
     readonly class: number;
+
+    @IsNumber()
+    @IsNotEmpty()
+    @MaxLength(3)
+    readonly age: number;
 }
