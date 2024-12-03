@@ -26,6 +26,6 @@ export class CreateStudentDto {
 
     @IsNumber()
     @IsNotEmpty()
-    @MaxLength(3)
+    @MaxLength(2)
     readonly personAge: number;
 }
