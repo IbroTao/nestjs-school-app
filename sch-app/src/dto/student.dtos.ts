@@ -28,4 +28,7 @@ export class CreateStudentDto {
     @IsNotEmpty()
     @MaxLength(2)
     readonly personAge: number;
+
+    @IsNotEmpty()
+    readonly address: string;
 }
