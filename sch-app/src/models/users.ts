@@ -1,12 +1,16 @@
 /* eslint-disable prettier/prettier*/
-import { Prop, Schema } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
 @Schema()
 export class User {
-    @Prop()
+    @Prop({ unique: true, required: true})
     username: string;
 
-    @Prop()
-    displayName: string;
+    @Prop({ required: false })
+    displayName?: string;
 
+    @Prop({ required: false })
+    avatarUrl?: string; 
 }
+
+export const UserSchema = SchemaFactory.createForClass(User)
